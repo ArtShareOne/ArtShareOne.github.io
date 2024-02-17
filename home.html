@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="height=device-height, initial-scale=1.0">
+    <title>ArtShare</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        p, p:hover, h1, h2, h3, h4, h5, h6 {
+            cursor: default;
+        }
+        .signin :any-link {
+            color: #000000;
+            cursor: not-allowed;
+            opacity: 0.75;
+        }
+        .createaccount :any-link {
+            color: #000000;
+            cursor: not-allowed; 
+            opacity: 0.75;
+        }
+        .createspace :any-link {
+            color: #FFFFFF;
+        }
+        .gallery :any-link {
+            color: #FFFFFF;
+        }
+        .signin {
+            color: #EDD700;
+        }
+        .createaccount {
+            color: #0DDBCF;
+        }
+        .createspace {
+            text-align: center;
+            border: none;
+            background-color: #F06449;
+            color: #FFFFFF;
+        }
+        .createspace :any-link {
+            color: #FFFFFF;
+        }
+        .termsconditions {
+            text-align: center;
+            border: none;
+            background-color: #F06449;
+            color: #FFFFFF;
+        }
+        .termsconditions :any-link {
+            color: #FFFFFF;
+        }
+        .gallery {
+            text-align: center;
+            border: none;
+            background-color: #0DDBCF;
+            color: #FFFFFF;
+        }
+        .button-container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            row-gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .ALThumb {
+            left: 10px;
+            top: -1px;
+            position: fixed;
+            width: 40px;
+            height: auto;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        a {
+            text-decoration: none;
+        }
+        header nav {
+            font-size: 18px;
+            text-align: center;
+            top: -30%;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        .accountOptions {
+            padding-right: 30px;
+            float: right;
+            top: -15px;
+            position: relative;
+        }
+        .logo {
+            padding-top: 30px;
+        }
+    </style>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="home.html"><img src="favicon.png" alt="ArtShare Logo" class="ALThumb"></a>
+            </li>
+            <li class="accountOptions">
+                <p><a class="createaccount" href="createaccount.html" title="Create Account"><b>Create Account </b></a><b style="color: #7D8491;"><b>/ </b></b><a class="signin" href="signin.html" title="Sign in (Not Available)"><b>Sign in</b></a></p>
+            </li>
+        </ul>
+    </nav>
+</header>
+</head>
+<body>
+    <img src="ArtShareLogo.png" alt="ArtShare Logo" class="logo" style="height: auto; width: 100%; align-self: center;" class="image">
+    <h1 style="font-size: 60px; color: #EDD700; text-align: center; margin-left: 10%; margin-right: 10%; width: 80%; top: 250px;" class="Welcome">Share your art with the world</h1>
+    <p style="font-size: 30px; color: #0DDBCF; text-align: center; display: block; right: 0; left: 0; bottom: 3vh;">Exclusive Showcase Preview</p>
+    <div class="button-container">
+        <button type="button" class="createspace"><a href="createspace.html" title="ArtShare CreateSpace">CreateSpace</a></button>
+        <button type="button" class="gallery"><a href="gallery.html" title="ArtShare Gallery">Gallery</a></button>
+    </div>
+    </main>
+    <div><br></div>
+    <footer class="footer">
+        <p><b>&copy;2024 SCCS RoboWarriors 2.0. <a href="credits.html" style="color: #EDD700;">Credits </a></b><a href="termsconditions.html" class="termsconditions" title="Read the Terms & Conditions">Terms & Conditions</a></p>
+    </footer>
+</body>
+</html>

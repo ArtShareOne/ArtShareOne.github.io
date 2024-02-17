@@ -1,0 +1,144 @@
+/* site colors: 
+#EDD700
+#0DDBCF
+#F06449
+*/
+body::-webkit-scrollbar {
+    display: none;
+}
+header {
+    background-color: #F06449;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 14 !important;
+    height: 18px;
+}
+@font-face {
+    font-family: 'SF-Compact-Text';
+    src: url('https://artshare.one/SF-Compact-Text-Regular.ttf') format('truetype');
+}
+@media screen and (max-width: 300px) and (min-width: 200px){
+    .accountOptions {
+        position: relative;
+        font-size: 6% !important;
+        top: -15px !important;
+    }
+}
+@media screen and (max-width: 475px) {
+    footer{
+        font-size: 90% !important;
+    }
+    h1{
+        font-size: 20px!important;
+        top: 1vh !important;
+    }
+    header{
+        font-size: 3% !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .upload{
+        font-size: 18px !important;
+        top: 3px !important;
+        left: 50px !important;
+    }
+    .accountOptions{
+        font-size: 14px !important;
+        top: -10px !important;
+    }
+}
+@media screen and (max-width: 295px) and (min-width: 1px){
+.accountOptions{
+    display: none;
+}
+    body {
+        text-align: center;
+    }
+    footer{
+        font-size: 5px !important;
+    }
+    p, h1{
+        font-size: 18px !important;
+    }
+}
+button {
+    border: none;
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #EDD700;
+    color: #000000;
+}
+html, body {
+    cursor: default;
+    background-color: #333333;
+    text-decoration: none;
+    font-family: 'SF-Compact-Text' !important;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #F06449;
+    display: inline;
+}
+
+
+main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    position: sticky;
+    z-index: 2;
+}
+a{
+    font-family: 'SF-Compact-Text' !important;
+    cursor: pointer;
+}
+footer {
+    font-size: 12pt;
+    color: #000000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #F06449;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+}
+a {
+    text-decoration: none;
+    color: #000;  
+    position: relative;
+}
+
+a:after {
+    text-align: center;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: width 0.4s ease-in-out;
+    border-radius: 60px;
+}
+
+a:hover:after {
+    width: 100%;
+}
+    input{
+        border: none;
+        border-radius: 8px;
+    }    
+/*Thanks for visiting the CSS!
+-Owen at 𝔸𝕣𝕥𝕊𝕙𝕒𝕣𝕖
+*/

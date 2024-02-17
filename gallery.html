@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="ArtShareLogothumbnail.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtShare Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+                button {
+            border: none;
+            z-index: 15;
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: #F06449;
+            text-align: center;
+        }
+        button.left {
+            z-index: 18;
+            left: 10px;
+        }
+        button.right {
+            z-index: 18;
+            right: 10px;
+        }
+        button p {
+            color: #0DDBCF;
+            font-size: 50px;
+            text-align: center;
+            position: relative;
+            bottom: 30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 16;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+        .polaroid {
+            z-index: 10;
+            height: auto;
+            width: 90vw;
+            margin: 0 auto 100px auto;
+            justify-content: center;
+            display: flex;
+            position: relative;
+            width: 260px;
+            padding: 10px 10px 20px 10px;
+            border: 10px solid #EDD700;
+            border-right-color: #F06449;
+            border-left-color: #0DDBCF;
+            border-top-color: #0DDBCF;
+            border-bottom-color: #F06449;
+            border-radius: 10px;
+            background-color:#ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+        .polaroid img {
+            width: 50vw;
+            height: auto;
+        }
+        .polaroid p {
+            font-size: 30px;
+            position: absolute;
+            bottom: -130px;
+            width: 100%;
+            text-align: center;
+            color: #000000;
+            background-color: #F06449;
+            background-repeat: inherit;
+        }
+        .ALThumb {
+            left: 10px;
+            top: -1px;
+            position: fixed;
+            width: 40px;
+            height: auto;
+        }
+        .signin {
+            color: #EDD700;
+        }
+        .createaccount {
+            color: #0DDBCF;
+        }
+        header {
+            background-color: #F06449;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 13;
+            height: 18px;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        a {
+            text-decoration: none;
+        }
+        header nav {
+            font-size: 18px;
+            text-align: center;
+            top: -30%;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        .accountOptions {
+            padding-right: 30px;
+            float: right;
+            top: -15px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html"><img src="favicon.png" alt="ArtShare Logo" class="ALThumb" title="Home"></a>
+                </li>
+                <li class="accountOptions">
+                    <p><a class="createaccount" href="createaccount.html" title="Create Account"><b>Create Account </b></a><b style="color: #7D8491;"><b>/ </b></b><a class="signin" href="signin.html" title="Sign in (Not Available)"><b>Sign in</b></a></p>
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="gallery" style="text-align: center; justify-content: center; margin: 0;">
+        <div id="imageContainer" class="polaroid">
+            <img id="currentImage" src="" alt="Image" style="width: 100%; height: auto;">
+            <div style="height: 50px;"></div>
+            <p id="currentCaption" style="font-size: 30px;"></p>
+        </div>
+        <div style="position: fixed; margin: 0,0;">
+            <button class="left" onclick="showPrevImage()" style=" color: #0DDBCF;">←
+            </button>
+            <button class="right" onclick="showNextImage()" style=" color: #0DDBCF;">→
+            </button>
+        </div>
+    </div>
+    <div style="height: 2000px; position: absolute;"></div>
+    <footer>
+    <p><b>&copy;2024 SCCS RoboWarriors 2.0. <a href="credits.html" style="color: #EDD700;">Credits </a></b><a href="termsconditions.html" class="termsconditions" title="Read the Terms & Conditions">Terms & Conditions</a></p>
+    </footer>
+    <script>
+            var galleryData = JSON.parse(localStorage.getItem('galleryData')) || [];
+            var currentImageIndex = 0;
+            var currentImageElement = document.getElementById('currentImage');
+            var currentCaptionElement = document.getElementById('currentCaption');
+
+            function showImage(index) {
+                var item = galleryData[index];
+                if (item) {
+                    currentImageElement.src = localStorage.getItem(item.imageSrc);
+                    currentCaptionElement.textContent = item.caption;
+                }
+            }
+         function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + galleryData.length) % galleryData.length;
+                showImage(currentImageIndex);
+            }
+
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % galleryData.length;
+                showImage(currentImageIndex);
+            }
+        window.onload = function () {
+            document.querySelector('button.left').addEventListener('click', showPrevImage);
+            document.querySelector('button.right').addEventListener('click', showNextImage);
+            showImage(currentImageIndex);
+        };
+
+    </script>
+</body>
+</html>
