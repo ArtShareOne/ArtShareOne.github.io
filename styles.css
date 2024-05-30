@@ -18,7 +18,7 @@ header {
 }
 @font-face {
     font-family: 'SF-Compact-Text';
-    src: url('https://artshareone.github.io/SF-Compact-Text-Regular.ttf') format('truetype');
+    src: url('https://artshare.one/SF-Compact-Text-Regular.ttf') format('truetype');
 }
 @media screen and (max-width: 300px) and (min-width: 200px){
     .accountOptions {
